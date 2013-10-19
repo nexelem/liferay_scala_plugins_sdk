@@ -1,0 +1,4 @@
+build.*.properties
+.ivy
+ivy.xml.MD5
+*.iml

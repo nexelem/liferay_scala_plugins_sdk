@@ -40,5 +40,18 @@
 			<replacefilter token="@hook.name@" value="${hook.name}" />
 			<replacefilter token="@plugin.type.dir@" value="${plugin.type.dir}" />
 		</replace>
+		
+		<!-- Support for scala language in hooks -->
+		<if>
+			<isset property="hook.lang" />
+			<then>
+				<copy overwrite="true" todir="${hook.dir}">
+					<fileset
+						dir="${sdk.dir}/tools/hook_${hook.lang}_tmpl"
+					/>
+				</copy>
+			</then>
+		</if>
+		<!-- Support for scala language in hooks -->
 	</target>
 </project>
